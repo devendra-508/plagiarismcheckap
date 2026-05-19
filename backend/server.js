@@ -15,8 +15,14 @@ const authRoute = require('./routes/authRoute');
 const app = express();
 
 app.use(cors({
-  origin: ['http://localhost:3000', 'http://localhost:3001', 'http://localhost:3002'],
-  methods: ['GET', 'POST'],
+  origin: [
+    'http://localhost:3000',
+    'http://localhost:3001', 
+    'http://localhost:3002',
+    'https://plagiarismcheckap.vercel.app',
+    'https://plagiarismcheckap-rlmt.vercel.app'
+  ],
+  methods: ['GET', 'POST', 'PUT', 'DELETE'],
   credentials: true,
 }));
 
