@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-const API_URL = 'http://localhost:5000/api';
+const API_URL = 'https://plagiarismcheckap.onrender.com/api';
 
 // Create instance
 const api = axios.create({
@@ -46,4 +46,4 @@ export const checkPlagiarism = async (text, reference, checkAI = false, excludeQ
     console.error('API Error:', error);
     throw error;
   }
-};
+};
