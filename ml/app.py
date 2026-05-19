@@ -10,6 +10,7 @@ from tavily import TavilyClient
 import requests
 from bs4 import BeautifulSoup
 import random
+import os
 
 nltk.download('punkt')
 nltk.download('stopwords')
@@ -306,5 +307,6 @@ def health():
     return jsonify({"status": "ok"})
 
 if __name__ == "__main__":
-    print("Python ML Server chal raha hai port 5001 pe!")
-    app.run(port=5001, debug=True)
+    port = int(os.environ.get('PORT', 10000))
+    print(f"Python ML Server starting on port {port}")
+    app.run(host='0.0.0.0', port=port, debug=False)
